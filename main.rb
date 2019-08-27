@@ -1,5 +1,5 @@
-array = [ 4, 3, 78, 2, 0, 2 ]
-
+# encoding: UTF-8
+array = [4, 3, 78, 2, 0, 2]
 
 def bubble_sort(array)
   is_finished = false
@@ -11,7 +11,6 @@ def bubble_sort(array)
     # loop from 0 to 5
     for num in 0...array.length - counter
       if array[num] > array[num + 1]
-        #swap numbers
         aux = array[num]
         array[num] = array[num + 1]
         array[num + 1] = aux
@@ -29,7 +28,6 @@ end
 
 bubble_sort(array)
 
-
 def bubble_sort_by(array)
   is_finished = false
 
@@ -39,8 +37,7 @@ def bubble_sort_by(array)
 
     # loop from 0 to 5
     for num in 0...array.length - counter
-      if yield(array[num], array[num + 1]) > 0
-        #swap numbers
+      if yield(array[num], array[num + 1]).positive?
         aux = array[num]
         array[num] = array[num + 1]
         array[num + 1] = aux
@@ -55,6 +52,6 @@ def bubble_sort_by(array)
   end
 end
 
-bubble_sort_by(['hi', 'hello','hey', 'ola', 'holaaaa', 'oi']) do |left,right|
+bubble_sort_by(['hi', 'hello', 'hey']) do |left, right|
   left.length - right.length
 end
