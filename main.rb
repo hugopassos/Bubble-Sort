@@ -20,13 +20,13 @@ def bubble_sort(array)
 
     counter += 1
 
-    print array
-    puts "\n"
-
   end
+
+  return array
+
 end
 
-bubble_sort(array)
+print bubble_sort(array)
 
 def bubble_sort_by(array)
   is_finished = false
@@ -46,10 +46,11 @@ def bubble_sort_by(array)
     end
 
     counter += 1
-    print array
-    puts "\n"
 
   end
+
+  return array
+
 end
 
 bubble_sort_by(%w[hi hello hey]) do |left, right|
