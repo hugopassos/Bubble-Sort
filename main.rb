@@ -9,12 +9,13 @@ def bubble_sort(array)
     is_finished = true
     counter = 1
 
-    array.each_with_index do |e, i|
+    array.each_with_index do |_e, i|
       if array[i + 1] && array[i] > array[i + 1]
         aux = array[i]
         array[i] = array[i + 1]
         array[i + 1] = aux
         is_finished = false
+        next
       end
     end
 
@@ -35,12 +36,13 @@ def bubble_sort_by(array)
     is_finished = true
     counter = 1
 
-    array.each_with_index do |e, i|
+    array.each_with_index do |_e, i|
       if array[i + 1] && yield(array[i], array[i + 1]) > 0
         aux = array[i]
         array[i] = array[i + 1]
         array[i + 1] = aux
         is_finished = false
+        next
       end
     end
 
